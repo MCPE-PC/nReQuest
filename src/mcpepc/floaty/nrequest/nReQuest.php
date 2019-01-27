@@ -132,6 +132,9 @@ class nReQuest extends PluginBase implements Listener {
       }
     }
   }
+  function getLogger(): PluginLogger {
+    return $this->logger;
+  }
 
   protected function removeConfiguringPlayer(string $name): bool {
     $key = \array_search($name, $this->configuringPlayers, true);
@@ -141,9 +144,6 @@ class nReQuest extends PluginBase implements Listener {
     } else {
       return false;
     }
-  }
-  protected function getLogger(): PluginLogger {
-    return $this->logger;
   }
   private function registerUIs(): void {
     foreach ($this->db->getAll() as $quest) {
