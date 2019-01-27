@@ -12,6 +12,7 @@ use pocketmine\plugin\{
   PluginBase,
   PluginLogger
 };
+use pocketmine\network\mcpe\protocol\PacketPool;
 use pocketmine\utils\Config;
 
 use slapper\entities\SlapperHuman;
