@@ -1,0 +1,10 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/BedrockServer/nReQuest
+branches:
+- master
+projects:
+  nReQuest:
+    path: ''
+    libs:
+    - src: thebigsmileXD/customui/customui
+      version: ^3.0.0
+...
