@@ -12,7 +12,6 @@ use pocketmine\plugin\{
   PluginBase,
   PluginLogger
 };
-use pocketmine\network\mcpe\protocol\PacketPool;
 use pocketmine\utils\Config;
 
 use slapper\entities\SlapperHuman;
@@ -23,12 +22,6 @@ use xenialdan\customui\elements as UIElements;
 use xenialdan\customui\event\{
   // UICloseEvent,
   UIDataReceiveEvent
-};
-use xenialdan\customui\network\{
-  ModalFormRequestPacket,
-  ModalFormResponsePacket,
-  ServerSettingsRequestPacket,
-  ServerSettingsResponsePacket
 };
 use xenialdan\customui\windows\{
   CustomForm,
@@ -49,10 +42,6 @@ class nReQuest extends PluginBase implements Listener {
 
   function onEnable(): void {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
-    PacketPool::registerPacket(new ModalFormRequestPacket());
-		PacketPool::registerPacket(new ModalFormResponsePacket());
-		PacketPool::registerPacket(new ServerSettingsRequestPacket());
-		PacketPool::registerPacket(new ServerSettingsResponsePacket());
 		$this->registerUIs();
   }
   function onLoad(): void {
