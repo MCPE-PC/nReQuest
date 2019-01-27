@@ -1,0 +1,27 @@
+---
+name: nReQuest
+version: 0.3.0
+description: [Floaty Online] NPC-powered quest plugin
+author: MCPE_PC
+main: mcpepc\floaty\nrequest\nReQuest
+depend:
+- Slapper
+softdepend:
+- EconomyAPI
+api:
+- 3.0.0
+commands:
+  nrequest:
+    description: nReQuest main command
+    usage: /nrequest
+permissions:
+  nrequest:
+    default: true
+    description: Allow to use nReQuest's rich features
+    children:
+      nrequest.command:
+        default: op
+        description: Allow to use /nrequest
+      nrequest.quest:
+        description: Allow to do a quest
+...
