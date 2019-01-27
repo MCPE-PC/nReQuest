@@ -1,7 +1,7 @@
 ---
 name: nReQuest
-version: 0.3.0
-description: [Floaty Online] NPC-powered quest plugin
+version: 0.3.1
+description: '[Floaty Online] NPC-powered quest plugin'
 author: MCPE_PC
 main: mcpepc\floaty\nrequest\nReQuest
 depend:

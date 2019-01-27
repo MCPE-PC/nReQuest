@@ -42,8 +42,8 @@ class nReQuest extends PluginBase implements Listener {
 
   protected $configuringPlayer = [];
   protected static $uis = [
-    'settings' => [],
-    'questStart' => []
+    'questStart' => [],
+    'settings' => []
   ];
 
   function onEnable(): void {
@@ -124,6 +124,10 @@ class nReQuest extends PluginBase implements Listener {
         switch ($type) {
           case 'questStart':
             $event->getPlayer()->sendMessage('Not yet supported');
+            break;
+          case 'settings':
+            $data = $event->getData();
+            break;
         }
       }
     }
@@ -143,10 +147,10 @@ class nReQuest extends PluginBase implements Listener {
   }
   private function registerUIs(): void {
     foreach ($this->db->getAll() as $quest) {
-      $settingsUI = new CustomForm('ReQuest settings');
-      self::$uis['settings'][$quest['slapperId']] = UIAPI::addUI($this, $settingsUI);
       $startUI = new ModalForm('ReQuest!', $quest['quest']['title'], $quest['quest']['text'], 'Okay!', 'Cancel');
       self::$uis['questStart'][$quest['slapperId']] = UIAPI::addUI($this, $startUI);
+      $settingsUI = new CustomForm('ReQuest settings');
+      self::$uis['settings'][$quest['slapperId']] = UIAPI::addUI($this, $settingsUI);
     }
   }
 }
