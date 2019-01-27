@@ -34,7 +34,7 @@ class nReQuest extends PluginBase implements Listener {
   private $db;
   private $logger;
 
-  protected $configuringPlayer = [];
+  protected $configuringPlayers = [];
   protected static $uis = [
     'questStart' => [],
     'settings' => []
